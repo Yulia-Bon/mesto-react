@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import api from '../utils/Api'
 
-function Maim(props) {
+function Main(props) {
 
     const [userName, setUserName] = React.useState();
     const [userDescription , setUserDescription ] = React.useState();
@@ -65,4 +65,4 @@ function Maim(props) {
     );
 }
 
-export default Maim;
+export default Main;
