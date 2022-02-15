@@ -1,5 +1,4 @@
 import React from 'react';
-import PopupWithForm from './PopupWithForm';
 import Card from './Card';
 import api from '../utils/Api'
 
@@ -8,7 +7,7 @@ function Maim(props) {
     const [userName, setUserName] = React.useState();
     const [userDescription , setUserDescription ] = React.useState();
     const [profileAvatar, setUserAvatar] = React.useState();
-    const [card, setCards] = React.useState([]);
+    const [cards, setCards] = React.useState([]);
 
     React.useEffect(() => {
         api.getProfileInfo()
@@ -46,11 +45,18 @@ function Maim(props) {
                 <button className="profile__add-button" type="button" aria-label="добавить фото" onClick={props.onAddPlace}></button>
             </section>
 
-            <section className="places elements elements_page_size">
-                return (
-                <Card card={card} key={card._id} onCardClick={props.onCardClick}/>
-                )
-                })}>
+            <section className="places">
+
+                <ul className="photo-grid">
+
+                    {cards.map((card) =>{
+                        return (
+                            <Card card={card} key={card._id} onCardClick={props.onCardClick}/>
+                        )
+                    })}
+                </ul>
+
+
             </section>
 
 
