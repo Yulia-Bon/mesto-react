@@ -1,3 +1,27 @@
+## Description:
+"Mesto" is an interactive page where users can share photos.
+
+## Functionality:
+
+* Photos and user data are downloaded from the server
+
+## Technologies:
+
+* Flexbox
+* Grid Layout
+* Positioning Elements
+* Animation and Transform using CSS
+* BEM Methodology
+* File Structure and File Paths (Nested BEM)
+* Git
+* JavaScript (Asynchronous JS, OOP, Fetch API)
+* Webpack
+* React JS
+* Functional Components
+* Client-side form validation (custom hook)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
