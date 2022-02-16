@@ -39,7 +39,6 @@ function App() {
         // временная функция обработки input
     }
 
-
     return (<div className="pages">
 
         <Header/>
@@ -84,7 +83,6 @@ function App() {
         <PopupWithForm title="Вы уверены?" name="check" onClose={closeAllPopups} buttonText="Да"/>
         <ImagePopup onClose={closeAllPopups} card={selectedCard}/>
     </div>);
-
 }
 
 export default App;
