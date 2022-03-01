@@ -18,6 +18,7 @@
 @import url(./bloсks/photo-grid/__like/photo-grid__like.css);
 @import url(./bloсks/photo-grid/__like/_active/photo-grid__like_active.css);
 @import url(./bloсks/photo-grid/__delete-button/photo-grid__delete-button.css);
+@import url(./bloсks/photo-grid/__delete-button/_hidden/photo-grid__delete-button_hidden.css);
 
 @import url(./bloсks/profile/profile.css);
 @import url(./bloсks/profile/__add-button/profile__add-button.css);
