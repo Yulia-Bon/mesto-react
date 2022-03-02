@@ -16,9 +16,11 @@ function EditProfilePopup(props){
     function handleChangeName(e){
         setName(e.target.value);
     }
+
     function handleChangeDescription(e){
         setDescription(e.target.value);
     }
+
     function handleSubmit(e){
         e.preventDefault();
         props.onUpdateUser({
@@ -26,6 +28,7 @@ function EditProfilePopup(props){
             about: description,
         });
     }
+
     return(
         <PopupWithForm title="Редактировать профиль"
                        name="profile"

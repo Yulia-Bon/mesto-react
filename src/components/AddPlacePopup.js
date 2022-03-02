@@ -1,24 +1,29 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
 
-function AddPlacePopup(props){
+function AddPlacePopup(props) {
     const [name, setName] = React.useState('');
     const [link, setLink] = React.useState('');
-    function handleChangeName(e){
+
+    function handleChangeName(e) {
         setName(e.target.value);
     }
-    function handleChangeLink(e){
+
+    function handleChangeLink(e) {
         setLink(e.target.value);
     }
-    function handleSubmit(e){
+
+    function handleSubmit(e) {
         e.preventDefault();
         props.onAddPlace({
             name,
             link,
         });
     }
-    return(
-        <PopupWithForm title="Новое место" name="place" isOpen={props.isOpen} onClose={props.onClose} buttonText="Создать"
+
+    return (
+        <PopupWithForm title="Новое место" name="place" isOpen={props.isOpen} onClose={props.onClose}
+                       buttonText="Создать"
                        onSubmit={handleSubmit} isLoading={props.isLoading} handleOverlayClose={props.handleOverlayClose}
                        buttonText="Создать">
             <input className="popup__input popup-photos__input-card-name" id="card-name-input" type="text"

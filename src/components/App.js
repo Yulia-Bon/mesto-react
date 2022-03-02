@@ -157,35 +157,34 @@ function App() {
         setIsConfirmationPopupOpen(true);
     }
 
-    return (
-        <CurrentUserContext.Provider value={currentUser}>
-            <div className="pages">
+    return (<CurrentUserContext.Provider value={currentUser}>
+        <div className="pages">
 
-                <Header/>
-                <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
-                      onEditAvatar={handleEditAvatarClick}
-                      onCardClick={handleCardClick} cards={cards} onCardLike={handleCardLike}
-                      onCardDeleteClick={handleDeletePopupClick}/>
-                <Footer/>
-                <EditProfilePopup onClose={closeAllPopups} isOpen={isEditProfilePopupOpen}
-                                  onUpdateUser={handleUpdateUser} isLoading={isLoading}
-                                  handleOverlayClose={handleOverlayClose}/>
-                <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}
-                                 onUpdateAvatar={handleUpdateAvatar} isLoading={isLoading}
-                                 handleOverlayClose={handleOverlayClose}/>
-                <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit}
-                               isLoading={isLoading}
-                               handleOverlayClose={handleOverlayClose}/>
+            <Header/>
+            <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick}
+                  onEditAvatar={handleEditAvatarClick}
+                  onCardClick={handleCardClick} cards={cards} onCardLike={handleCardLike}
+                  onCardDeleteClick={handleDeletePopupClick}/>
+            <Footer/>
+            <EditProfilePopup onClose={closeAllPopups} isOpen={isEditProfilePopupOpen}
+                              onUpdateUser={handleUpdateUser} isLoading={isLoading}
+                              handleOverlayClose={handleOverlayClose}/>
+            <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups}
+                             onUpdateAvatar={handleUpdateAvatar} isLoading={isLoading}
+                             handleOverlayClose={handleOverlayClose}/>
+            <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit}
+                           isLoading={isLoading}
+                           handleOverlayClose={handleOverlayClose}/>
 
 
-                <PopupWithForm title="Вы уверены?" name="check" onClose={closeAllPopups} buttonText="Да"
-                               isOpen={isConfirmationPopupOpen}
-                               onSubmit={handleCardDelete} isLoading={isLoading}
-                               handleOverlayClose={handleOverlayClose}/>
-                <ImagePopup onClose={closeAllPopups} card={selectedCard} isOpen={isImagePopupOpen}
-                            handleOverlayClose={handleOverlayClose}/>
-            </div>
-        </CurrentUserContext.Provider>)
+            <PopupWithForm title="Вы уверены?" name="check" onClose={closeAllPopups} buttonText="Да"
+                           isOpen={isConfirmationPopupOpen}
+                           onSubmit={handleCardDelete} isLoading={isLoading}
+                           handleOverlayClose={handleOverlayClose}/>
+            <ImagePopup onClose={closeAllPopups} card={selectedCard} isOpen={isImagePopupOpen}
+                        handleOverlayClose={handleOverlayClose}/>
+        </div>
+    </CurrentUserContext.Provider>)
 }
 
 export default App;

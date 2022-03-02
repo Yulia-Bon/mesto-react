@@ -14,8 +14,6 @@ function Card(props) {
         props.onCardClick(props.card);
     }
 
-
-
     function handleLikeClick(){
         props.onCardLike(props.card);
     }
