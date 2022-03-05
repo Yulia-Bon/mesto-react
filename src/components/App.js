@@ -20,8 +20,8 @@ function App() {
 
     const [cards, setCards] = React.useState([]);
     const [selectedCard, setSelectedCard] = React.useState({name: '', link: ''});
-    const [deletedCard, setDeletedCard] = React.useState('');
-    const [currentUser, setCurrentUser] = React.useState('');
+    const [deletedCard, setDeletedCard] = React.useState({});
+    const [currentUser, setCurrentUser] = React.useState({});
 
     const [isLoading, setIsLoading] = React.useState(false);
 
@@ -74,9 +74,9 @@ function App() {
             });
     }
 
-    function handleUpdateAvatar(avatarUrl) {
+    function handleUpdateAvatar(data) {
         setIsLoading(true);
-        api.changeAvatar({avatar: avatarUrl})
+        api.changeAvatar(data)
             .then((res) => {
                 setCurrentUser(res);
                 closeAllPopups();

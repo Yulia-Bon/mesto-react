@@ -1,39 +1,72 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
+import {useFormWithValidation} from '../hooks/useFormWithValidation';
 
 function AddPlacePopup(props) {
-    const [name, setName] = React.useState('');
-    const [link, setLink] = React.useState('');
 
-    function handleChangeName(e) {
-        setName(e.target.value);
-    }
+    const {
+        values,
+        errors,
+        isValid,
+        handleChange,
+        resetForm
+    } = useFormWithValidation({});
 
-    function handleChangeLink(e) {
-        setLink(e.target.value);
-    }
+    React.useEffect(() => {
+        resetForm();
+    }, [props.isOpen, resetForm])
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.onAddPlace({
-            name,
-            link,
-        });
+        props.onAddPlace(values);
     }
 
+
     return (
-        <PopupWithForm title="Новое место" name="place" isOpen={props.isOpen} onClose={props.onClose}
-                       buttonText="Создать"
-                       onSubmit={handleSubmit} isLoading={props.isLoading} handleOverlayClose={props.handleOverlayClose}
-                       buttonText="Создать">
-            <input className="popup__input popup-photos__input-card-name" id="card-name-input" type="text"
-                   placeholder="Название" name="name" minLength="2" maxLength="30" required
-                   onChange={handleChangeName}/>
-            <span className="popup__input-error placeName-input-error" id="card-name-input-error"></span>
-            <input className="popup__input popup-photos__input popup-photos__input_type_card-src"
-                   id="card-src-input" type="url"
-                   placeholder="Ссылка на картинку" name="link" required onChange={handleChangeLink}/>
-            <span className="popup__input-error placeUrl-input-error" id="card-src-input-error"></span>
+        <PopupWithForm
+            title="Новое место"
+            name="place"
+            isOpen={props.isOpen}
+            onClose={props.onClose}
+            buttonText="Создать"
+            isDisabled={!isValid}
+            onSubmit={handleSubmit}
+            isLoading={props.isLoading}
+            handleOverlayClose={props.handleOverlayClose}
+            buttonText="Создать"
+        >
+            <input
+                className={errors.name ? "popup__input popup__input-error-line" : "popup__input"}
+                id="card-name-input"
+                type="text"
+                placeholder="Название"
+                name="name"
+                minLength="2"
+                maxLength="30"
+                required
+                value={values.name || ""}
+                onChange={handleChange}
+            />
+            <span
+                className={errors.name ? "popup__input-error popup__input-error_active placeName-input-error" : 'popup__input-error'}
+                id="card-name-input-error">
+               {errors.name}
+            </span>
+            <input
+                className={errors.link ? "popup__input-error-line popup__input popup-photos__input  popup-photos__input_type_card-src" : 'popup__input'}
+                id="card-src-input"
+                type="url"
+                placeholder="Ссылка на картинку"
+                name="link"
+                required
+                value={values.link || ""}
+                onChange={handleChange}
+            />
+            <span
+                className={errors.link ? "popup__input-error popup__input-error_active placeUrl-input-error" : 'popup__input-error'}
+                id="card-src-input-error">
+               {errors.link}
+            </span>
         </PopupWithForm>
     )
 }
