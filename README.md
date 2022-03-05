@@ -24,5 +24,3 @@
 * React JS
 * Functional Components
 * Client-side form validation (custom hook)
-
-## Планы: добавить валидацию полей
