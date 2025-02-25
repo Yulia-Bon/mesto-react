@@ -122,7 +122,8 @@ function App() {
 
     function handleOverlayClose(e) {
         if (e.target.classList.contains('popup')) {
-            closeAllPopups();
+             closeAllPopups();
+           
         }
     }
 
@@ -177,7 +178,7 @@ function App() {
                            handleOverlayClose={handleOverlayClose}/>
 
 
-            <PopupWithForm title="Вы уверены?" name="check" onClose={closeAllPopups} buttonText="Да"
+            <PopupWithForm title="Are you sure?" name="check" onClose={closeAllPopups} buttonText="Yes"
                            isOpen={isConfirmationPopupOpen}
                            onSubmit={handleCardDelete} isLoading={isLoading}
                            handleOverlayClose={handleOverlayClose}/>

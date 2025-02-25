@@ -1,26 +1,46 @@
-# Проект: Место
-## [Посмотреть проект можно по ссылке ](https://yulia-bon.github.io/mesto-react/)
-### Обзор
-Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.
-В работе применены расширенные возможности HTML и CSS, JavaScript.
-Файловая структура организована по БЭМу.
-Вёрстка адаптивная: ширина зоны с содержимым меняется вместе с шириной окна браузера.
-Реализованы основные принципы работы над редактированием профилем пользователя - изменение имени,
-описания деятельности и аватара.
-Есть возможность добавления новых карточек на страницу, которые можно лайкнуть и расмотреть в полноэкранном режиме.
-Реализована валидация формы до отправки, чтобы пользователь вводил корректные данные.
+# Mesto React
 
-## Технологический стек:
+## Description
+**Mesto React** is an interactive web application built with the React library. The application allows users to upload photos, like posts, edit their profile, and manage image cards.
 
-* Flexbox
-* Grid Layout
-* Positioning Elements
-* Animation and Transform using CSS
-* BEM Methodology
-* File Structure and File Paths (Nested BEM)
-* Git
-* JavaScript (Asynchronous JS, OOP, Fetch API)
-* Webpack
-* React JS
-* Functional Components
-* Client-side form validation (custom hook)
+## Features
+- User registration and authentication
+- Profile editing (avatar and user information)
+- Adding and deleting image cards
+- Liking and unliking posts
+- Viewing images in fullscreen mode
+
+## Technologies
+- React
+- React Router
+- Context API
+- JavaScript (ES6+)
+- HTML, CSS (Flexbox, Grid, BEM)
+- API interaction with a server
+
+## Installation and Running
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/Yulia-Bon/mesto-react.git
+   ```
+2. Navigate to the project folder:
+   ```sh
+   cd mesto-react
+   ```
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
+4. Start the development server:
+   ```sh
+   npm start
+   ```
+   The application will be available at `http://localhost:3000/`.
+
+## Deployment
+The project can be deployed on GitHub Pages or another platform. To build the project, use the command:
+```sh
+npm run build
+```
+
+© 2025 Yulia Bon

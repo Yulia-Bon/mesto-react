@@ -6,7 +6,7 @@ export class Api {
             if(res.ok){
                 return res.json();
             }
-            return Promise.reject(`Произошла ошибка: ${res.status} :(`);
+            return Promise.reject(`An error has occurred: ${res.status} :(`);
         });
     }
 

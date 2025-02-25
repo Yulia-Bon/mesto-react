@@ -24,17 +24,18 @@ function Card(props) {
 
     return (
         <li className="photo-grid__item">
-            <img className="photo-grid__pic" src={props.card.link} alt={props.card.name} onClick={handleClick}/>
+            <img className="photo-grid__pic" src={props.card.link} alt={props.card.name} onClick={handleClick} />
             <div className="photo-grid__item-description">
                 <h2 className="photo-grid__title">{props.card.name}</h2>
-                <button className={cardDeleteButtonClassName} type="button" aria-label="удалить фото" onClick={handleDeleteClick}></button>
+                <button className={cardDeleteButtonClassName} type="button" aria-label="delete photo" onClick={handleDeleteClick}></button>
                 <div>
-                    <button className={cardLikeButtonClassName} type="button" aria-label="лайк" onClick={handleLikeClick}></button>
+                    <button className={cardLikeButtonClassName} type="button" aria-label="like" onClick={handleLikeClick}></button>
                     <p className="photo-grid__like-numbers">{props.card.likes.length}</p>
                 </div>
             </div>
         </li>
     )
+    
 }
 
 export default Card;

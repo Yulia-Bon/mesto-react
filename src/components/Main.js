@@ -10,17 +10,17 @@ function Main(props) {
         <main>
             <section className="profile">
                 <div className="profile__edit-avatar" onClick={props.onEditAvatar}></div>
-                <img className="profile__avatar" alt="Аватар" src={currentUser.avatar}/>
+                <img className="profile__avatar" alt="Avatar" src={currentUser.avatar}/>
                 <div className="profile__info">
                     <h1 className="profile__name">{currentUser.name}</h1>
                     <p className="profile__job">{currentUser.about}</p>
-                    <button className="profile__edit" type="button" aria-label="кнопка изменения профиля"
+                    <button className="profile__edit" type="button" aria-label="Profile edit button"
                             onClick={props.onEditProfile}></button>
                 </div>
-                <button className="profile__add-button" type="button" aria-label="добавить фото"
+                <button className="profile__add-button" type="button" aria-label="Add photo"
                         onClick={props.onAddPlace}></button>
             </section>
-
+    
             <section className="places">
                 <ul className="photo-grid">
                     {props.cards.map((card) => {
@@ -32,6 +32,7 @@ function Main(props) {
             </section>
         </main>
     );
+    
 }
 
 export default Main;

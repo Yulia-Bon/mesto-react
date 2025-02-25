@@ -24,22 +24,21 @@ function AddPlacePopup(props) {
 
     return (
         <PopupWithForm
-            title="Новое место"
+            title="New Place"
             name="place"
             isOpen={props.isOpen}
             onClose={props.onClose}
-            buttonText="Создать"
+            buttonText="Create"
             isDisabled={!isValid}
             onSubmit={handleSubmit}
             isLoading={props.isLoading}
             handleOverlayClose={props.handleOverlayClose}
-            buttonText="Создать"
         >
             <input
                 className={errors.name ? "popup__input popup__input-error-line" : "popup__input"}
                 id="card-name-input"
                 type="text"
-                placeholder="Название"
+                placeholder="Title"
                 name="name"
                 minLength="2"
                 maxLength="30"
@@ -50,13 +49,13 @@ function AddPlacePopup(props) {
             <span
                 className={errors.name ? "popup__input-error popup__input-error_active placeName-input-error" : 'popup__input-error'}
                 id="card-name-input-error">
-               {errors.name}
+                {errors.name}
             </span>
             <input
-                className={errors.link ? "popup__input-error-line popup__input popup-photos__input  popup-photos__input_type_card-src" : 'popup__input'}
+                className={errors.link ? "popup__input-error-line popup__input popup-photos__input popup-photos__input_type_card-src" : 'popup__input'}
                 id="card-src-input"
                 type="url"
-                placeholder="Ссылка на картинку"
+                placeholder="Image URL"
                 name="link"
                 required
                 value={values.link || ""}
@@ -65,10 +64,11 @@ function AddPlacePopup(props) {
             <span
                 className={errors.link ? "popup__input-error popup__input-error_active placeUrl-input-error" : 'popup__input-error'}
                 id="card-src-input-error">
-               {errors.link}
+                {errors.link}
             </span>
         </PopupWithForm>
     )
+    
 }
 
 export default AddPlacePopup;

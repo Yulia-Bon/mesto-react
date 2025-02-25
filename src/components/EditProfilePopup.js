@@ -28,11 +28,11 @@ function EditProfilePopup(props) {
 
     return (
         <PopupWithForm
-            title="Редактировать профиль"
+            title="Edit Profile"
             name="profile"
             onClose={props.onClose}
             isOpen={props.isOpen}
-            buttonText="Сохранить"
+            buttonText="Save"
             onSubmit={handleSubmit}
             isLoading={props.isLoading}
             handleOverlayClose={props.handleOverlayClose}
@@ -43,35 +43,40 @@ function EditProfilePopup(props) {
                 id="user-name-input"
                 name="name"
                 type="text"
-                value={props.isLoadingInitialData ? 'Загрузка...' : values.name || ''}
-                placeholder="Имя"
+                value={props.isLoadingInitialData ? 'Loading...' : values.name || ''}
+                placeholder="Name"
                 minLength="2"
                 maxLength="40"
                 required
-                onChange={handleChange}/>
+                onChange={handleChange}
+            />
             <span
                 className={errors.name ? "popup__input-error popup__input-error_active userName-input-error" : 'popup__input-error'}
-                id="user-name-input-error">
+                id="user-name-input-error"
+            >
                 {errors.name}
             </span>
             <input
-                className={errors.about ? "popup__input popup__input-error-line  popup-user__input popup-user__input_type_job" : 'popup__input'}
+                className={errors.about ? "popup__input popup__input-error-line popup-user__input popup-user__input_type_job" : 'popup__input'}
                 id="user-description-input"
                 type="text"
-                value={props.isLoadingInitialData ? 'Загрузка...' : values.about || ''}
-                placeholder="Описание"
+                value={props.isLoadingInitialData ? 'Loading...' : values.about || ''}
+                placeholder="Description"
                 name="about"
                 minLength="2"
                 maxLength="200"
                 required
-                onChange={handleChange}/>
+                onChange={handleChange}
+            />
             <span
                 className={errors.about ? "popup__input-error popup__input-error_active userAbout-input-error" : 'popup__input-error'}
-                id="user-description-input-error">
+                id="user-description-input-error"
+            >
                 {errors.about}
             </span>
         </PopupWithForm>
     )
+    
 }
 
 export default EditProfilePopup;

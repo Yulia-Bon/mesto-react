@@ -25,32 +25,36 @@ function EditAvatarPopup(props) {
     }
 
     return (
-
         <PopupWithForm
-            title="Обновить аватар"
+            title="Update Avatar"
             name="avatar"
             isOpen={props.isOpen}
             onClose={props.onClose}
-            buttonText="Сохранить"
+            buttonText="Save"
             onSubmit={handleSubmit}
             isDisabled={!isValid}
             isLoading={props.isLoading}
-            handleOverlayClose={props.handleOverlayClose}>
+            handleOverlayClose={props.handleOverlayClose}
+        >
             <input
                 className={errors.avatar ? "popup__input popup__input-error-line popup-avatar__input" : 'popup__input'}
                 id="avatar"
                 type="url"
-                placeholder="Ссылка на фото"
+                placeholder="Image URL"
                 name="avatar"
                 value={values.avatar || ''}
                 required
-                onChange={handleChange}/>
+                onChange={handleChange}
+            />
             <span
-                className={errors.avatar ? "popup__submit popup__input-error_active popup-avatar__submit" : 'popup__input-error'}
-                id="avatar-error">
-                 {errors.avatar}
+                className={errors.avatar ? "popup__input-error_active popup-avatar__submit" : 'popup__input-error'}
+                id="avatar-error"
+            >
+                {errors.avatar}
             </span>
-        </PopupWithForm>)
+        </PopupWithForm>
+    )
+    
 }
 
 export default EditAvatarPopup;
